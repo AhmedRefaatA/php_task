@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('status')->default('pending');
             $table->unsignedBigInteger('department_id');
-            $table->foreign('department_id')->references('id')->on('departments');
+            $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
             $table->timestamps();
         });
     }

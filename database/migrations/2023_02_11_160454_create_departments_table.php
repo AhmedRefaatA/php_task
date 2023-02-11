@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('manager_id');
+            $table->string('manager_id')->nullable();
             $table->foreign('manager_id')->references('id')->on('employees');
             $table->timestamps();
         });
